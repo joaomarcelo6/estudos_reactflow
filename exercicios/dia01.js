@@ -43,4 +43,11 @@ console.log(buscarNo(nodes, "99"));
 function nosOrfaos(nodes, edges) {
   return nodes.filter((no) => edges.some((e) => e.target === no.id) !== true);
 }
+
 console.log(nosOrfaos(nodes, edges));
+
+function filhosDe(edges, id) {
+  return edges.filter((e) => e.source === id).map((e) => e.target);
+}
+
+console.log(filhosDe(edges, "1"));
