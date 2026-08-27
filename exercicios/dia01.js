@@ -1,0 +1,41 @@
+const nodes = [
+  {
+    id: "1",
+    type: "mensagem",
+    position: { x: 0, y: 0 },
+    data: { label: "Olá! Sou o bot." },
+  },
+  {
+    id: "2",
+    type: "pergunta",
+    position: { x: 0, y: 100 },
+    data: { label: "O que deseja?", opcoes: ["Comprar", "Suporte"] },
+  },
+  {
+    id: "3",
+    type: "mensagem",
+    position: { x: -150, y: 200 },
+    data: { label: "Vou te levar à loja." },
+  },
+  {
+    id: "4",
+    type: "mensagem",
+    position: { x: 150, y: 200 },
+    data: { label: "Chamando um atendente." },
+  },
+  { id: "5", type: "fim", position: { x: 0, y: 300 }, data: { label: "Fim" } },
+];
+
+const edges = [
+  { id: "e1-2", source: "1", target: "2" },
+  { id: "e2-3", source: "2", target: "3", label: "Comprar" },
+  { id: "e2-4", source: "2", target: "4", label: "Suporte" },
+  { id: "e3-5", source: "3", target: "5" },
+  { id: "e4-5", source: "4", target: "5" },
+];
+
+function buscarNo(nodes, id) {
+  return nodes.find((no) => no.id === id);
+}
+
+console.log(buscarNo(nodes, "99"));
