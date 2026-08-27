@@ -39,3 +39,8 @@ function buscarNo(nodes, id) {
 }
 
 console.log(buscarNo(nodes, "99"));
+
+function nosOrfaos(nodes, edges) {
+  return nodes.filter((no) => edges.some((e) => e.target === no.id) !== true);
+}
+console.log(nosOrfaos(nodes, edges));
