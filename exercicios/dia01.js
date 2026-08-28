@@ -64,6 +64,19 @@ function paraTexto(nodes, edges) {
 
 console.log(paraTexto(nodes, edges));
 
-function contaPorTipo() {
-  return;
+function contaPorTipo(nodes) {
+  return nodes.reduce((acumulador, itens) => {
+    acumulador[itens.type] = (acumulador[itens.type] ?? 0) + 1;
+    return acumulador;
+  }, {});
+
+  /* Loop executa a mesma coisa
+  const acumulador = {};
+  for (let i = 0; i < nodes.length; i++) {
+    acumulador[nodes[i].type] = (acumulador[nodes[i].type] ?? 0) + 1;
+  }
+  return acumulador; 
+  */
 }
+
+console.log(contaPorTipo(nodes));
