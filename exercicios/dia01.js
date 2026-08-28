@@ -80,3 +80,26 @@ function contaPorTipo(nodes) {
 }
 
 console.log(contaPorTipo(nodes));
+
+function moverNo(nodes, id, dx, dy) {
+  return nodes.map((no) => {
+    if (no.id !== id) {
+      return no;
+    } else {
+      const originalX = no.position.x;
+      const originalY = no.position.y;
+      const deslocamento = {
+        ...no,
+        position: { x: originalX + dx, y: originalY + dy },
+      };
+      return deslocamento;
+    }
+  });
+}
+
+console.log(moverNo(nodes, "1", 10, 10));
+
+const novos = moverNo(nodes, "1", 10, 10);
+console.log(novos[0] === nodes[0]);
+console.log(novos[1] === nodes[1]);
+console.log(nodes[0].position);
