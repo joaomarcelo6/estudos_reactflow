@@ -38,7 +38,7 @@ function buscarNo(nodes, id) {
   return nodes.find((no) => no.id === id);
 }
 
-console.log(buscarNo(nodes, "99"));
+console.log(buscarNo(nodes, "3"));
 
 function nosOrfaos(nodes, edges) {
   return nodes.filter((no) => edges.some((e) => e.target === no.id) !== true);
@@ -51,3 +51,19 @@ function filhosDe(edges, id) {
 }
 
 console.log(filhosDe(edges, "1"));
+
+function paraTexto(nodes, edges) {
+  return edges
+    .map((e) => {
+      const origem = buscarNo(nodes, e.source).type;
+      const chegada = buscarNo(nodes, e.target).type;
+      return `${e.source} (${origem}) --> ${e.target} (${chegada})`;
+    })
+    .join("\n");
+}
+
+console.log(paraTexto(nodes, edges));
+
+function contaPorTipo() {
+  return;
+}
