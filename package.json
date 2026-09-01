@@ -1,0 +1,21 @@
+{
+  "name": "estudos_reactflow",
+  "version": "1.0.0",
+  "description": "Repositório de estudos para o case técnico de estágio — construtor visual de fluxo de chatbot com React Flow, TypeScript e Next.js.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joaomarcelo6/estudos_reactflow.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/joaomarcelo6/estudos_reactflow/issues"
+  },
+  "homepage": "https://github.com/joaomarcelo6/estudos_reactflow#readme"
+}
