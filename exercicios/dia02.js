@@ -8,6 +8,7 @@ import resumo, {
   comDefaults,
   adicionarNo,
   removerNo,
+  criarNo,
 } from "./lib/grafo.js";
 
 console.log(resumo(nodes, edges));
@@ -18,7 +19,6 @@ console.log(condicaoDaAresta(edges[0]));
 console.log(condicaoDaAresta(edges[1]));
 console.log(condicaoDaAresta(edges[2]));
 console.log(condicaoDaAresta(edges[3]));
-console.log(condicaoDaAresta(edges[4]));
 console.log("\n");
 
 console.log(operadorDoNo(nodes[0]));
@@ -46,4 +46,10 @@ console.log(
   }),
 );
 console.log("\n");
+
 console.log(removerNo(nodes, "2"));
+console.log("\n");
+
+console.log(criarNo("mensagem", "2", "5"));
+console.log(criarNo("fim", "3"));
+console.log(criarNo("llm"));

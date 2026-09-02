@@ -47,5 +47,17 @@ export function removerNo(nodes, id) {
 }
 
 export function criarNo(type, ...alvos) {
-  const id = "novo";
+  const idNoNovo = "6";
+  const no = {
+    id: idNoNovo,
+    type: type,
+    position: { x: 100, y: 200 },
+    data: { label: "Label teste" },
+  };
+  const edges = alvos.map((t) => ({
+    id: `e${idNoNovo}-${t}`,
+    source: idNoNovo,
+    target: t,
+  }));
+  return { no, edges };
 }
