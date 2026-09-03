@@ -10,6 +10,8 @@ import resumo, {
   removerNo,
   criarNo,
 } from "./lib/grafo.js";
+import { salvaFluxo, carregaFluxo } from "./lib/persistencia.js";
+import { podeConectar } from "./lib/valida.js";
 
 console.log(resumo(nodes, edges));
 console.log(buscarNo(nodes, "3"));
@@ -48,8 +50,26 @@ console.log(
 console.log("\n");
 
 console.log(removerNo(nodes, "2"));
-console.log("\n");
 
 console.log(criarNo("mensagem", "2", "5"));
 console.log(criarNo("fim", "3"));
 console.log(criarNo("llm"));
+console.log("\n");
+
+async function teste() {
+  try {
+    const retornoCerto = await carregaFluxo("fluxo-1");
+    console.log(retornoCerto);
+    const retornoErrado = await carregaFluxo("fluxo-9");
+    console.log(retornoErrado);
+  } catch (erro) {
+    new Error("Falha ao carregar fluxo");
+    console.log(erro.message);
+  }
+}
+
+console.log("\n");
+console.log(podeConectar(nodes, edges, "5", "3"));
+console.log(podeConectar(nodes, edges, "3", "3"));
+console.log(podeConectar(nodes, edges, "2", "4"));
+console.log(podeConectar(nodes, edges, "1", "5"));
