@@ -19,3 +19,17 @@ e `lib/valida.js`. `package.json` com `"type": "module"`. Defesa oral das 3 perg
 objetos, e inverter a direção custou. Extensão `.js` obrigatória no import; parênteses
 em arrow function retornando objeto literal.
 **Commit:** `05b7c2f`..`bc3c519` (6 commits)
+
+### Dia 04 · 03/09 – 04/09
+
+Conteúdo do dia 3 do plano: destructuring (objeto, array, aninhado, em parâmetro),
+`Object.keys`/`values`/`entries`, JSON e imutabilidade. Seis exercícios em
+`exercicios/dia03.js`, com `resumirNo`, `rotulos`, `pares`, `estatisticas`,
+`exportar`/`importar` e `clonar` em `lib/grafo.js`. Defesa oral das 12 perguntas.
+**Travei:** onde o destructuring pode acontecer — tentei fazê-lo fora do lugar onde
+o dado chega (importando `nodes` inexistente, destructurando o array em vez do nó,
+`= label` referenciando a própria variável). No `reduce` do `maisComum`: o tipo do
+que o callback devolve vira o acumulador da próxima iteração, então par tem que
+devolver par. Também confundi cópia com referência — `===` entre objetos compara
+endereço, não conteúdo.
+**Commit:**
