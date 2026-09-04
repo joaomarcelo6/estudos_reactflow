@@ -75,3 +75,27 @@ export function rotulos(nodes) {
 export function pares(objeto) {
   return Object.entries(objeto).map(([chave, valor]) => `${chave}=${valor}`);
 }
+
+export function estatisticas(nodes) {
+  const contagem = nodes.reduce((acumulador, itens) => {
+    acumulador[itens.type] = (acumulador[itens.type] ?? 0) + 1;
+    return acumulador;
+  }, {});
+  const maisComum = Object.entries(contagem).reduce(
+    ([melhorTipo, melhorContagem], [chave, valor]) =>
+      melhorContagem > valor ? [melhorTipo, melhorContagem] : [chave, valor],
+  )[0];
+  return { contagem, maisComum };
+}
+
+export function exportar(fluxo) {
+  return JSON.stringify(fluxo, null, 2);
+}
+
+export function importar(texto) {
+  return JSON.parse(texto);
+}
+
+export function clonar(fluxo) {
+  return JSON.parse(JSON.stringify(fluxo));
+}
