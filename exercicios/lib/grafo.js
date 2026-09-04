@@ -61,3 +61,17 @@ export function criarNo(type, ...alvos) {
   }));
   return { no, edges };
 }
+
+//Funções do dia 3
+
+export function resumirNo({ id, type, data: { label } }) {
+  return `[${id}] ${type}: ${label}`;
+}
+
+export function rotulos(nodes) {
+  return nodes.map(({ data: { label } = {} }) => label);
+}
+
+export function pares(objeto) {
+  return Object.entries(objeto).map(([chave, valor]) => `${chave}=${valor}`);
+}
